@@ -10,14 +10,14 @@ const data = {
 }
 
 const sendData = async (url, data) =>{
-     await fetch(url, {
+     const response = await fetch(url, {
         method: "POST",
         body: data,
     })
     .then((data)=> console.log(data));
 
     if (!response.ok){
-        throw new Error(`Ошибка по адресу ${url}, статуc ошибки ${res.status}`);
+        throw new Error(`Ошибка по адресу ${url}, статуc ошибки ${response.status}`);
     };
     return await response.json();
 };
