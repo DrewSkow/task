@@ -5,7 +5,7 @@ const url = 'https://test.toolympus.com/api/jfe-test'
 
 function getData(e) {
     e.preventDefault();
-
+    createDiv();
     const values = {};
 
     for (let field of form) {
@@ -18,20 +18,25 @@ function getData(e) {
     }
     let result = JSON.stringify(values);
     sendData(url, result);
+    messages('success');
 
 }
 
-// const messages = (status) =>{
-//     const message = {
-//         loading: 'Загрузка...',
-//         sucsess: 'Загружено!',
-//         failure: 'Ошибка!',
-//     };
-//     let statusMessage = document.createElement('div');
-//     statusMessage.classList.add('status');
-//     form.appendchild(statusMessage);
-//     document.querySelector('.status').textContent = message.status;
-// };
+const createDiv = () => {
+    let statusMessage = document.createElement('div');
+    statusMessage.classList.add('status');
+    form.appendChild(statusMessage);
+
+}
+
+const messages = (status) =>{
+    const message = {
+        loading: 'Загрузка...',
+        success: 'Загружено!',
+        failure: 'Ошибка!',
+    };
+    document.querySelector('.status').textContent = message.status;
+};
 
 
 
@@ -42,13 +47,15 @@ const sendData = async (url, data) => {
     });
 
     if (!res.ok){
+        messages('failure');
         throw new Error(`Ошибка по адресу ${url}, статуc ошибки ${res.status}`);
     }
-
+    messages('loading');
     return res;
 }
 
 btnSendForm.onclick = () => {
+
     form.addEventListener('submit', getData);
 }
 

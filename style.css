@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#reg_form{
+    margin: 20% auto;
+    max-width: fit-content;
+    max-height: fit-content;
+    background-color: white;
+    border: 1px solid;
+    padding: 20px 0;
+}
+
+#reg_form input{
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+}
+
+.first-line{
+    display: grid;
+    grid-template-columns: repeat(3, calc(100%/3));
+}
+
+.second-line{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.second-line select{
+    margin: 10px;
+    padding: 10px;
+    width: 93%;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn button{
+    width: 47%;
+    margin: 10px;
+    height: 25px;
+    background-color: #059de4;
+    border: 1px solid #ccc;
+    box-shadow: 0 5px 5px -5px #000;
+    border-radius: 5px;
+    color:#fff;
+}
+button:active{
+    box-shadow: -6px -2px 42px -24px #000000 inset;
+}
+
+@media (max-width:  720px) {
+    #reg_form{
+        max-width: 280px;
+        padding:20px 0;
+    }
+    .first-line, .second-line{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .second-line select{
+        width: 21vh;
+    }
+
+
+    .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn button{
+        width: 50%;
+    }
+
+}

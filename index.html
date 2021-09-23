@@ -8,25 +8,29 @@
     
     <title>Task</title>
 </head>
-<body>
-    
+<body> 
+
     <form id="reg_form">
-        <input type="text"  tabindex="1" placeholder="Фамилия" name="sername"  >
-        <input type="text"  tabindex="2" placeholder="Имя" name="name" >
-        <input type="text" tabindex="3" placeholder="Отчество" name="midlename"  >
-        <input type="tel"  tabindex="4" placeholder="Телефон" name="phonenum">
-        
-
-
-        <select name="country" id="">
-            <option value="Таиланд">Таиланд</option>
-            <option value="Индонезия">Индонезия</option>
-            <option value="Малайзия">Малайзия</option>
-            <option value="Вьетнам">Вьетнам</option>
-        </select>
- 
-        <button type="submit" id="send-form"  >Отправить</button>
-
+            <div class="first-line">
+                <input type="text" class ="style" tabindex="1" placeholder="Фамилия" name="sername">
+                <input type="text" class ="style" tabindex="2" placeholder="Имя" name="name"> 
+                <input type="text" class ="style" tabindex="3" placeholder="Отчество" name="midlename">
+            </div>
+            <div class="second-line">
+                <input type="tel"  class ="style" tabindex="4" placeholder="Телефон" name="phonenum">
+                <div class="select">
+                    <select name="country"  placeholder="Страна" >
+                        <option id='first-selector' selected="selected" hidden>Страна</option>
+                        <option value="Таиланд">Таиланд</option>
+                        <option value="Индонезия">Индонезия</option>
+                        <option value="Малайзия">Малайзия</option>
+                        <option value="Вьетнам">Вьетнам</option>
+                    </select>
+                </div>
+            </div>
+        <div class="btn">
+            <button type="submit" id="send-form" >Отправить</button>
+        </div>   
     </form>
 
     <script src="app.js"></script>
