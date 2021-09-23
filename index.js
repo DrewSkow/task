@@ -113,25 +113,89 @@ const {form} = document.forms;
 
 
 
-function retrieveFormValue(event) {
-    event.preventDefault();
+// function retrieveFormValue(event) {
+//     event.preventDefault();
 
+//     const values = {};
+
+//     for (let field of form) {
+//         const {name} = field;
+
+//         if (name) {
+//             const {type, checked, value} = field;
+
+//             values[name] = isCheckboxOrRadio(type) ? checked : value;
+//         }
+//     }
+
+//     console.log('v6', values);
+// }
+
+// form.addEventListener('submit', retrieveFormValue);
+
+
+
+const btnSendForm = document.querySelector('#send-form');
+const form = document.forms[0];
+
+const url = 'https://test.toolympus.com/api/jfe-test'
+
+function getData(e) {
+    e.preventDefault();
+    createDiv();
     const values = {};
 
     for (let field of form) {
         const {name} = field;
 
         if (name) {
-            const {type, checked, value} = field;
-
-            values[name] = isCheckboxOrRadio(type) ? checked : value;
+            const {value} = field;
+            values[name] = value;
         }
     }
 
-    console.log('v6', values);
+    sendData(url, values);
+    
 }
 
-form.addEventListener('submit', retrieveFormValue);
+const createDiv = () => {
+    let statusMessage = document.createElement('div');
+    statusMessage.classList.add('status');
+    form.appendChild(statusMessage);
+
+}
+
+// const messages = (status) =>{
+//     const message = {
+//         loading: 'Загрузка...',
+//         success: 'Загружено!',
+//         failure: 'Ошибка!',
+//     };
+//     document.querySelector('.status').textContent = message.status;
+// };
+
+
+
+const sendData = async (url, data) => {
+        const res = await fetch(url, {
+        method: "POST",
+        headers: {'Content-Type': 'application/json;charset=utf-8'},
+        body: JSON.stringify(data),
+    });
+
+    if (!res.ok){
+        throw new Error(`Ошибка по адресу ${url}, статуc ошибки ${res.status}`);
+    }
+    return res;
+}
+
+btnSendForm.onclick = () => {
+    form.addEventListener('submit', getData);
+}
+
+
+
+
 
 
 
