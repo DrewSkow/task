@@ -2,7 +2,7 @@ const url = 'https://test.toolympus.com/api/jfe-test'
 ;
 
 const data = {
-        "lastname": "invalid",
+        "lastname": "string",
         "firstname": "string",
         "middlename": "string",
         "phone": "string",
