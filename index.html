@@ -12,15 +12,15 @@
 
     <form id="reg_form">
             <div class="first-line">
-                <input type="text" class ="style" tabindex="1" placeholder="Фамилия" name="last_name">
-                <input type="text" class ="style" tabindex="2" placeholder="Имя" name="name"> 
-                <input type="text" class ="style" tabindex="3" placeholder="Отчество" name="middle_name">
+                <input type="text" class ="style" tabindex="1" placeholder="Фамилия" name="lastname">
+                <input type="text" class ="style" tabindex="2" placeholder="Имя" name="firstname"> 
+                <input type="text" class ="style" tabindex="3" placeholder="Отчество" name="middlename">
             </div>
             <div class="second-line">
-                <input type="tel"  class ="style" tabindex="4" placeholder="Телефон" name="phone_num">
+                <input type="tel"  class ="style" tabindex="4" placeholder="Телефон" name="phone">
                 <div class="select">
-                    <select name="country"  placeholder="Страна" >
-                        <option id='first-selector' selected="selected" hidden>Страна</option>
+                    <select name="country"  >
+                        <option value ="" selected="selected" hidden>Страна</option>
                         <option value="Таиланд">Таиланд</option>
                         <option value="Индонезия">Индонезия</option>
                         <option value="Малайзия">Малайзия</option>
@@ -28,10 +28,11 @@
                     </select>
                 </div>
             </div>
-        <div class="btn">
+        <div class="btn" style ="display:flex; text-align:center;">
             <button type="submit" id="send-form" >Отправить</button>
         </div>   
     </form>
+     
 
     <script src="app.js"></script>
 </body>

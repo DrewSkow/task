@@ -83,3 +83,22 @@ button:active{
     }
 
 }
+.status {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 3px 0;
+    font-style: bold;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.y{
+    background-color: rgba(247, 255, 0, 0.5);
+}
+.r{
+    background-color: rgba(255, 51, 51, 0.5); red;
+}
+.g{
+    background-color: rgba(2, 250, 27, 0.5); green;
+}
