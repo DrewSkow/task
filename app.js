@@ -9,17 +9,25 @@ const data = {
         "country": "string"
 }
 
-const sendData = async (url, data) =>{
+const sendData = async (url, data) => {
      const response = await fetch(url, {
         method: "POST",
-        body: data,
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+            },
+        body: JSON.stringify(data),
     })
     .then((data)=> console.log(data));
 
     if (!response.ok){
         throw new Error(`Ошибка по адресу ${url}, статуc ошибки ${response.status}`);
     };
-    return await response.json();
+    return await response.json();  
 };
 
-sendData(url, data);
+
+btnSendForm.onclick = (e) => {
+    sendData(url, data);
+    e.preventDefault();
+}
+
