@@ -11,8 +11,6 @@ const clearInput = (input) =>{
     });
 }
 
-
-console.log(inputs);
 const createMessage = (status)=>{
     let stat = 0;
     let c = 0;
@@ -80,7 +78,7 @@ const sendData = async (url, data) => {
          createMessage('failure');
         throw new Error(`Ошибка по адресу ${url}, статуc ошибки ${response.status}`); 
     };
-    createMessage('success');
+    setTimeout(()=>{createMessage('success')}, 3000);
     return await response.json();  
 };
 

@@ -84,21 +84,59 @@ button:active{
 
 }
 .status {
+    width:100%;
     display: flex;
     justify-content: center;
-    margin: 10px 0;
+    margin: 10px auto;
     padding: 3px 0;
     font-style: bold;
     font-size: 16px;
     border-radius: 20px;
 }
 
+
+/* .y:after{
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 0;
+    height: 100%;
+    background:linear-gradient(to right,#FCF9C6, #FCF6A0, #FBF376, #FFF11F);
+    border-radius: 10px;
+    z-index: -1;
+    animation-name: moving;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: none;
+  } */
+
+
+  
+
 .y{
-    background-color: rgba(247, 255, 0, 0.5);
+     width: 0%;
+    background:linear-gradient(to right,#FFF11F, #FBF376, #FBF376, #FFF11F);
+    border-radius: 10px;
+    z-index: -1;
+    animation-name: moving;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: none;
 }
+
+@keyframes moving {
+    0%{
+        width:0%;
+    }
+    100%{
+        width: 100%;
+    }  
+}
+
 .r{
-    background-color: rgba(255, 51, 51, 0.5); red;
+    width: 100%;
+    background: rgba(255, 51, 51, 0.5);
 }
 .g{
-    background-color: rgba(2, 250, 27, 0.5); green;
+    width: 100%;
+    background: rgba(2, 250, 27, 0.5);
 }
